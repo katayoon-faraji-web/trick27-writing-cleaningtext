@@ -1,6 +1,6 @@
 # trick27-writing-cleaningtext
 
-- [Demo Project](https://katayoon-faraji-web.github.io/trick26-scroll/)
+- [Demo Project](https://katayoon-faraji-web.github.io/trick27-writing-cleaningtext/)
 
 - Developed by katayoon faraji
 
