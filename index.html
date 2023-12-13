@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;margin: 0;box-sizing: border-box;
+        }
+        body{
+            background-color: bisque;
+        }
+        h1{
+            font-size: 100px;
+            text-transform: uppercase;
+            color: blue;
+            font-family: cursive;
+            border-right: 2px solid purple;
+            animation: anime1  linear .2s infinite alternate;
+            padding:10px;
+            width: fit-content;
+            height: 150px;
+            margin: 100px auto;
+        }
+        @keyframes anime1 {
+            to{
+                border-right: 2px solid rgba(128, 0, 128, 0);
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <h1 id="text"></h1>
+    <script>
+        const _names = ['Hi There...','I am katayoon faraji','A frontend developer','welcome to my page❤']
+        
+        let txt = document.getElementById('text')
+        let status = 'writing'
+        let i = 0
+        let t = 1
+        let _name =''
+
+        function _turn(){
+            if(i<=((_names.length)-1)){
+                _name = _names[i]
+                if(i == ((_names.length)-1)){
+                    i = 0
+                }
+                else{
+                    i++
+                }
+            }
+        }
+        _turn()
+        // function _wrtite() {
+
+        //     console.log(_name);
+
+        //     setInterval(() => {
+        //         if(status=='writing'){
+                
+        //             if((t<=(_name.length))){
+                        
+        //                 txt.innerHTML = _name.slice(0,t)
+        //                 if(t == ((_name.length))){
+        //                     status ='cleaning'
+        //                 }
+        //                 else{
+        //                     t++
+        //                 }
+        //             }
+        //         }
+        //         else{
+        //             if(t>=0){
+        //                 txt.innerHTML = _name.slice(0,t)
+        //                 if(t==0){
+        //                     status ='writing'
+        //                     t = 1
+        //                     _turn()
+        //                 }
+        //                 else{
+        //                     t--
+        //                 }
+        //             }
+        //         }
+        //     }, 100);
+        // }
+        // _wrtite()
+        setInterval(() => {
+                if(status=='writing'){
+                
+                    if((t<=(_name.length))){
+                        
+                        txt.innerHTML = _name.slice(0,t)
+                        if(t == ((_name.length))){
+                            status ='cleaning'
+                        }
+                        else{
+                            t++
+                        }
+                    }
+                }
+                else{
+                    if(t>=0){
+                        txt.innerHTML = _name.slice(0,t)
+                        if(t==0){
+                            status ='writing'
+                            t = 1
+                            _turn()
+                        }
+                        else{
+                            t--
+                        }
+                    }
+                }
+            }, 100);
+    </script>
+    
+</body>
+</html>
